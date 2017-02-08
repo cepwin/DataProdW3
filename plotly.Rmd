@@ -1,0 +1,25 @@
+---
+title: "Plotly Assignment"
+author: "Wendy Sarrett"
+date: "February 6, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Plot of CO2 Data w/Plotly
+<H3 id=date></H2>
+
+<script>
+var today = new Date();
+document.getElementById('date').innerHTML = today
+</script>
+
+```{r plot, echo=FALSE,message=FALSE, warning=FALSE}
+library(plotly)
+data("CO2")
+plot_ly(CO2, x= ~Plant, y = ~uptake, z = ~conc, type = "scatter3d", color = ~Treatment)
+
+```
